@@ -12,7 +12,7 @@ pipeline{
         }
         stage("build"){
              when {
-                branch 'master'
+                branch '*/master'
             }
             
             steps{
