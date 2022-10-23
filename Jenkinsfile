@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage("fetch"){
             steps{
-                git credentialsId: 'git-token', url: 'https://github.com/imededin/simple-java-maven-app.git'
+                git branch: 'main' credentialsId: 'git-token', url: 'https://github.com/imededin/simple-java-maven-app.git'
             }
 
         }
