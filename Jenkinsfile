@@ -24,9 +24,9 @@ pipeline{
             steps{
                 echo "building image..."
                 withCredentials([usernamePassword(credentialsId: "docker-cre",passwordVariable: 'PASS',usernameVariable: 'USER')]){
-                    docker build -t imed1/demo:2.0 .
-                    docker login -u $USER -p $PASS
-                    docker push imed1/demo:2.0
+                    sh "docker build -t $USER/demo:2.0 ."
+                    sh "docker login -u $USER -p $PASS"
+                    sh "docker push imed1/demo:2.0"
                 }
             }
         }
