@@ -11,12 +11,9 @@ pipeline{
 
         }
         stage("build"){
-            when {
-                expression{
-                    BRANCH_NAME ==  'master'
-                }
-            }
+            
             steps{
+                echo "build $BRANCH_NAME"
                 sh 'mvn package'
             }
         }
